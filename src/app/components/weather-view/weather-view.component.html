@@ -1,0 +1,16 @@
+<div id="container">
+  <div>
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
+  </div>
+  <div *ngIf="city">
+    <app-average-temperature [temperature]="average" [startDate]="startDate" [endDate]="endDate"></app-average-temperature>
+  </div>
+  <div  id="days-of-week">
+    <app-day-temperature
+      *ngFor="let report of city?.dayReports"
+      [date]="report.date"
+      [temperature]="report.average"
+    ></app-day-temperature>
+  </div>
+</div>
+
