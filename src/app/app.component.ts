@@ -11,14 +11,10 @@ export class AppComponent {
   temperature: number | null = null;
 
   get backgroundGradient(): string {
-    let red;
-    let blue;
-    let green;
-    if (!this.temperature) {
-      red = 255;
-      blue = 255;
-      green = 255;
-    } else {
+    let red = 255;
+    let blue = 255;
+    let green = 255;
+    if (this.temperature) {
       red = (this.temperature + 40) / 80 * 255;
       blue = 255 - (this.temperature + 40) / 80 * 255;
       green = 130;
