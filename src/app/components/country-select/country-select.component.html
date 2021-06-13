@@ -1,0 +1,3 @@
+<select [class]="countryClass" (change)="onChange($event)">
+ <option *ngFor="let code of countryCodes" [value]="code">{{code}}</option>
+</select>

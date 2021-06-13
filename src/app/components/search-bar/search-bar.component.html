@@ -1,4 +1,5 @@
 <div id="search-bar">
   <img src="../../../assets/forecast_icon.svg" alt="">
+  <app-country-select (change)="onChange($event)"></app-country-select>
   <app-input (search)="onSearch($event)"></app-input>
 </div>

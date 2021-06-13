@@ -9,6 +9,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { DayTemperatureComponent } from './components/day-temperature/day-temperature.component';
 import { AverageTemperatureComponent } from './components/average-temperature/average-temperature.component';
+import { CountrySelectComponent } from './components/country-select/country-select.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { AverageTemperatureComponent } from './components/average-temperature/av
     SearchBarComponent,
     WeatherViewComponent,
     DayTemperatureComponent,
-    AverageTemperatureComponent
+    AverageTemperatureComponent,
+    CountrySelectComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

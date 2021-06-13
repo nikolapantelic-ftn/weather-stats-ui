@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { WeatherService } from "../../services/weather.service";
 import { City } from "../../types/city";
 import { Temperature } from "../../types/temperature";
+import { CitySearchQuery } from "../../types/city-search-query";
 
 @Component({
   selector: 'app-weather-view',
@@ -28,8 +29,8 @@ export class WeatherViewComponent {
     return this.city?.average;
   }
 
-  onSearch(city: any): void {
-    this.service.getForCity(city).subscribe(city => {
+  onSearch(searchQuery: CitySearchQuery): void {
+    this.service.get(searchQuery).subscribe(city => {
       this.city = city;
       this.cityChanged.emit(city);
       this.sortByDate();

@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import { Observable } from "rxjs";
 import { City } from "../types/city";
+import { CitySearchQuery } from "../types/city-search-query";
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,9 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-  getForCity(city: string): Observable<City> {
-    const url = city ? this.citiesUrl + '/' + city : '';
+  get(searchQuery: CitySearchQuery): Observable<City> {
+    const url = searchQuery.cityName && searchQuery.countryCode ?
+      this.citiesUrl + '/' + searchQuery.countryCode + '/' + searchQuery.cityName : '';
     return this.http.get<City>(url);
   }
 
