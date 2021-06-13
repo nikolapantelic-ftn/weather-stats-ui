@@ -11,6 +11,7 @@ import { DayTemperatureComponent } from './components/day-temperature/day-temper
 import { AverageTemperatureComponent } from './components/average-temperature/average-temperature.component';
 import { CountrySelectComponent } from './components/country-select/country-select.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    LayoutModule
+    LayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

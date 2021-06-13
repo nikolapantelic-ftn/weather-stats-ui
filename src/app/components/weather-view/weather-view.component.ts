@@ -3,11 +3,27 @@ import { WeatherService } from "../../services/weather.service";
 import { City } from "../../types/city";
 import { Temperature } from "../../types/temperature";
 import { CitySearchQuery } from "../../types/city-search-query";
+import { animate, style, transition, trigger } from "@angular/animations";
 
 @Component({
   selector: 'app-weather-view',
   templateUrl: './weather-view.component.html',
-  styleUrls: ['./weather-view.component.scss']
+  styleUrls: ['./weather-view.component.scss'],
+  animations: [
+    trigger(
+      'appearAnimation',
+      [
+        transition(
+          ':enter',
+          [
+            style({ height: 0, opacity: 0 }),
+            animate('1s ease-out',
+              style({ height: 280, opacity: 1 }))
+          ]
+        )
+      ]
+    )
+  ]
 })
 export class WeatherViewComponent {
 
