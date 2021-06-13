@@ -29,6 +29,10 @@ export class WeatherViewComponent {
     return this.city?.average;
   }
 
+  get iconCode(): string | undefined {
+    return this.city?.dayReports[0].hourReports[0].weatherIcon
+  }
+
   onSearch(searchQuery: CitySearchQuery): void {
     this.service.get(searchQuery).subscribe(city => {
       this.city = city;

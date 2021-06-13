@@ -1,5 +1,6 @@
 <div id="search-bar">
-  <img src="../../../assets/forecast_icon.svg" alt="">
+  <!--img src="../../../assets/forecast_icon.svg" alt=""-->
+  <img height="36" width="36" [src]="iconUrl">
   <app-country-select (change)="onChange($event)"></app-country-select>
   <app-input (search)="onSearch($event)"></app-input>
 </div>

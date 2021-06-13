@@ -1,5 +1,6 @@
 import { City } from "./city";
 import { Temperature } from "./temperature";
+import { HourReport } from "./hour-report";
 
 export interface DayReport {
 
@@ -7,6 +8,7 @@ export interface DayReport {
   city: City;
   date: Date;
   average: Temperature;
+  hourReports: HourReport[];
 
 
 }
