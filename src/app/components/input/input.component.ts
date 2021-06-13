@@ -24,6 +24,14 @@ export class InputComponent implements OnInit {
     })
   }
 
+  get background(): string {
+    if (this.searchText) {
+      return 'background: url("../../../assets/search.svg") no-repeat scroll 0px 7px;' +
+        'background-position-x: 98%;'
+    }
+    return '';
+  }
+
   onKeyUp(): void {
     this.search.emit(this.searchText);
   }
